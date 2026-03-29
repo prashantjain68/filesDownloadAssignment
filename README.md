@@ -1,20 +1,20 @@
 ## Stack
 
-React + TypeScript + Webpack + CSS-in-JS + ESLint + Prettier
+React + TypeScript + Webpack + CSS-in-JS + ESLint + Prettier + jest + React Testing Library
 
 ## Links
 
-- **Live App**: https://files-download-assignment.vercel.app/
+- **Live App (vercel)**: https://files-download-assignment.vercel.app/
 - **GitHub**: https://github.com/prashantjain68/filesDownloadAssignment
 
 ## Code Review
 
-The two primary files to review are:
+The three primary files to review are:
 
 - `src/components/FilesViewer.tsx` — main component implementing the file listing UI
 - `src/components/FilesViewer.test.tsx` — unit tests covering all functionality
 
-`src/utils/FilesService.ts` mimics an API call and resolves its promise after a 500ms delay.
+- `src/utils/FilesService.ts` mimics an API call and resolves its promise after a 500ms delay.
 
 Code coverage is close to 100% and all functionality is fully unit tested.
 
