@@ -126,7 +126,8 @@ describe('FilesViewer', () => {
         ).toEqual(downloadableFiles.length);
     });
 
-    it('should not render a checkbox for files that are not downloadable', async () => {
+    it(`should not render a checkbox for files that are not downloadable
+        should not render a status indicator for files that are not downloadable`, async () => {
         const {allFiles} = await getFilesForTesting();
         const nonDownloadableFiles = allFiles.filter((d) => {
             return !isFileDownloadable(d);
@@ -140,8 +141,15 @@ describe('FilesViewer', () => {
         nonDownloadableFiles.forEach((file) => {
             const trEl = document.querySelector(`[data-fileid="${file.id}"]`) as HTMLElement;
             expect(trEl).toBeTruthy();
+
             const selectFileCheckbox = queryByTestId(trEl, 'dtiFilesViewer_selectFileCheckbox');
             expect(selectFileCheckbox).toBeFalsy();
+
+            const downloadableIndicator = queryByTestId(
+                trEl,
+                'dtiFilesViewer_downloadableIndicator'
+            );
+            expect(downloadableIndicator).toBeFalsy();
         });
     });
 
