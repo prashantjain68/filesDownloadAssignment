@@ -30,6 +30,10 @@ State is managed locally within the component rather than an external store (e.g
 
 API errors are handled and displayed in the UI. To simulate an error, set `GET_FILES_SHOULD_THROW_ERROR = true` in `src/utils/FilesService.ts`. This error case is fully tested in `FilesViewer.test.tsx`.
 
+No component library is used. All components are built with native HTML elements.
+
+Additional libraries such as react-router were intentionally omitted to keep the solution focused on the assignment requirements.
+
 ## Getting Started
 
 ```bash
