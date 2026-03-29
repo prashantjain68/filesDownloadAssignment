@@ -24,6 +24,8 @@ Styling is done using CSS-in-JS (via react-jss), with normalize.css used as a ba
 
 State is managed locally within the component rather than an external store (e.g. Zustand), as the feature is self-contained and involves no prop drilling.
 
+API errors are handled and displayed in the UI. To simulate an error, set `GET_FILES_SHOULD_THROW_ERROR = true` in `src/utils/FilesService.ts`. This error case is fully tested in `FilesViewer.test.tsx`.
+
 ## Getting Started
 
 ```bash
