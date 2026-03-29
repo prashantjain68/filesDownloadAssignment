@@ -38,6 +38,11 @@ const useStyles = createUseStyles({
         border: BORDER_COLOR_TOKEN,
         borderCollapse: 'collapse',
 
+        '& th': {
+            textAlign: 'left',
+            backgroundColor: '#dde0e4',
+        },
+
         '& tr': {
             border: BORDER_COLOR_TOKEN,
             height: '35px',
@@ -56,21 +61,16 @@ const useStyles = createUseStyles({
         backgroundColor: '#eeeaea',
     },
 
-    statusCell: {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-
-    downloadableIndicatorContainer: {
+    downloadableIndicatorCell: {
         width: '20px',
-        height: '100%',
+        textAlign: 'right',
     },
     downloadableIndicator: {
         width: '10px',
         backgroundColor: 'green',
         height: '10px',
         borderRadius: '5px',
+        padding: '0px',
     },
 });
 
@@ -214,9 +214,8 @@ export const FilesViewer = () => {
                         <th scope="col">Name</th>
                         <th scope="col">Device</th>
                         <th scope="col">Path</th>
-                        <th scope="col" className={css.statusCell}>
-                            Status
-                        </th>
+                        <th scope="col"></th>
+                        <th scope="col">Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -284,17 +283,16 @@ const FileRow = ({fileRec, isSelected, onSelectionChange}: FileRowProps) => {
             <td>{fileRec.name}</td>
             <td>{fileRec.device}</td>
             <td>{fileRec.path}</td>
-            <td className={css.statusCell}>
-                <div className={css.downloadableIndicatorContainer} aria-hidden="true">
-                    {isDownloadable && (
-                        <div
-                            className={css.downloadableIndicator}
-                            data-testid="dtiFilesViewer_downloadableIndicator"
-                        ></div>
-                    )}
-                </div>
-                {capitalizeFirstChar(fileRec.status)}
+            <td className={css.downloadableIndicatorCell}>
+                {isDownloadable && (
+                    <div
+                        className={css.downloadableIndicator}
+                        data-testid="dtiFilesViewer_downloadableIndicator"
+                        aria-hidden="true"
+                    ></div>
+                )}
             </td>
+            <td>{capitalizeFirstChar(fileRec.status)}</td>
         </tr>
     );
 };
