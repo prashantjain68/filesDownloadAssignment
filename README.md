@@ -1,3 +1,8 @@
+## Links
+
+- **Live App**: https://files-download-assignment.vercel.app/
+- **GitHub**: https://github.com/prashantjain68/filesDownloadAssignment
+
 ## Code Review
 
 The two primary files to review are:
@@ -21,12 +26,5 @@ npm start        # Dev server at http://localhost:3000
 ```bash
 npm start            # Start development server
 npm run build        # Production build
-npm run build:dev    # Development build
 npm test             # Run tests
-npm run test:watch   # Watch mode
-npm run test:coverage # Coverage report
-npm run lint         # Lint source files
-npm run lint:fix     # Auto-fix lint errors
-npm run format       # Format with Prettier
-npm run type-check   # TypeScript type check only
 ```
