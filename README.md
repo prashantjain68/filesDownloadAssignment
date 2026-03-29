@@ -7,6 +7,10 @@ React + TypeScript + Webpack + CSS-in-JS + ESLint + Prettier + jest + React Test
 - **Live App (vercel)**: https://files-download-assignment.vercel.app/
 - **GitHub**: https://github.com/prashantjain68/filesDownloadAssignment
 
+## Screenshots
+
+A few screenshots are available [here](https://github.com/prashantjain68/filesDownloadAssignment/tree/main/screenshots).
+
 ## Code Review
 
 The three primary files to review are:
